@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <title>To-Do-List</title>
+</head>
+
+<body>
+  <!-- add to-do item bar -->
+  <div class="js-to-do-contentInput--wrapper z-10 flex flex-col justify-center items-start fixed left-1/2 -translate-x-1/2 st-p-top--100 mx-auto w-9/12 max-w-3xl an-transition-position duration-200 ease-out">
+    <label class="text-gray-500 font-medium mb-2" for="to-do-label">Write your to-do</label>
+    <div class="relative w-full">
+      <input type="text" id="to-do-input" placeholder="my to-do." class="js-to-do-contentInput st-to-do-contentInput py-4 px-6 w-full text-lg rounded-lg drop-shadow-md transition-colors border-innset-white hover:border-gray-100 focus:border-blue-400/50">
+      <div class="js-to-do-input-close-btn flex justify-center items-center absolute top-1/2 -translate-y-1/2 right-6 w-7 h-7 rounded-lg hover:cursor-pointer hover:bg-gray-50">
+        <span class="material-symbols-rounded text-gray-500">close</span>
+      </div>
+    </div>
+  </div>
+  <!-- content wrapper -->
+  <main class="st-pt-150 flex justify-evenly items-start gap-5 flex-wrap w-full h-full">
+    <!-- card container -->
+    <div class="flex  flex-col justify-center items-center max-w-sm w-full drop-shadow-lg rounded-2xl bg-white">
+      <!-- heading -->
+      <div class="flex justify-between items-center p-5 w-full">
+        <h4 class="text-xl font-medium ">To-do</h4>
+        <div class="w-3 h-3 rounded-full bg-gray-100"></div>
+      </div>
+      <!-- to-do items-container -->
+      <div class="js-to-do-items-container w-full">
+      </div>
+
+      <button class="js-add-to-do-btn group flex justify-start items-center p-5 gap-x-2 w-full rounded-lg">
+        <span class="material-symbols-rounded text-gray-300 transition-colors duration-300 group-hover:text-blue-400">add_box</span>
+        <p class="font-medium text-gray-300 transition-colors duration-300 group-hover:text-blue-400">Add a to-do item
+        </p>
+      </button>
+    </div>
+
+    <!-- available tags modal-->
+    <div data-called-by-item="0" class="js-tags-modal invisible opacity-0 z-20 fixed top-0 left-0 flex justify-center items-center w-full h-full overflow-y-scroll an-transition-opacity duration-150 ease-in bg-gray-300/5 backdrop-blur-sm">
+      <div class="flex flex-col justify-center items-center m-auto gap-4 max-w-sm w-full bg-white  rounded-lg drop-shadow-md">
+        <!-- heading -->
+        <div class="flex justify-between items-center px-5 py-3 w-full border-b border-gray-100">
+          <div class="w-3 h-3 rounded-full bg-gray-100"></div>
+          <div class="flex justify-center items-center w-7 h-7 rounded-lg hover:cursor-pointer hover:bg-gray-50">
+            <span class="js-tags-form-close-btn material-symbols-rounded text-gray-500 text-xl">close</span>
+          </div>
+        </div>
+        <!-- content -->
+        <div class="js-tags-container flex justify-center items-center flex-wrap gap-4 w-full p-5 ">
+
+          <div class="flex items-center justify-center gap-1">
+            <input id="tag-in-progress" class="js-tag" value="1" type="checkbox" name="tag">
+            <label for="tag-in-progress" class="text-base font-medium hover:cursor-pointer">in progress</label>
+          </div>
+
+          <div class="flex items-center justify-center gap-1">
+            <input id="tag-completed" class="js-tag" value="2" type="checkbox" name="tag">
+            <label for="tag-completed" class="text-base font-medium hover:cursor-pointer">completed</label>
+          </div>
+
+          <div class="flex items-center justify-center gap-1">
+            <input id="tag-important" class="js-tag" value="3" type="checkbox" name="tag">
+            <label for="tag-important" class="text-base font-medium hover:cursor-pointer">important</label>
+          </div>
+
+          <div class="flex items-center justify-center gap-1">
+            <input id="tag-urgent" class="js-tag" value="4" type="checkbox" name="tag">
+            <label for="tag-urgent" class="text-base font-medium hover:cursor-pointer">urgent</label>
+          </div>
+
+          <div class="flex items-center justify-center gap-1">
+            <input id="tag-not-important" class="js-tag" value="5" type="checkbox" name="tag">
+            <label for="tag-not-important" class="text-base font-medium hover:cursor-pointer">not important</label>
+          </div>
+
+          <div class="flex items-center justify-center gap-1">
+            <input id="tag-not-urgent" class="js-tag" value="6" type="checkbox" name="tag">
+            <label for="tag-not-urgent" class="text-base font-medium hover:cursor-pointer">not urgent</label>
+          </div>
+
+        </div>
+        <!-- confirm btn -->
+        <div class="flex justify-end items-center py-3 px-5 w-full border-t border-gray-100">
+          <button class="js-tags-selection-confirm-btn py-2 px-3 rounded-lg text-blue-500 bg-white border-2 border-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-100">confirm</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+</html>

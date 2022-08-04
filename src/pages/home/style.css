@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply w-full h-full;
+  }
+  body {
+    @apply w-full h-full;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply text-neutral-900;
+  }
+
+  input:focus-visible {
+    outline: none;
+  }
+
+  .material-symbols-rounded {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 200, 'opsz' 48;
+  }
+
+  @keyframes fade-up-start {
+    0% {
+      transform: translateY(0px);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    100% {
+      transform: translateY(8px);
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-up-end {
+    0% {
+      transform: translateY(8px);
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+@layer components {
+  .an-fade-up {
+    transform: translateY(8px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  .an-fade-up-start[data-animate='true'] {
+    animation: fade-up-start 150ms ease-in forwards;
+  }
+  .an-fade-up-end {
+    animation: fade-up-end 150ms ease-in forwards;
+  }
+}
+@layer utilities {
+  .st-p-top-1 {
+    top: calc(100% + 8px);
+  }
+  .st-p-top-2 {
+    top: calc(100% + 16px);
+  }
+  .st-p-top--100 {
+    top: -100px;
+  }
+  .st-pt-150 {
+    padding-top: 150px;
+  }
+
+  .an-transition-position {
+    transition-property: top, left, bottom, right, inset;
+  }
+  .an-transition-fade {
+    transition-property: transform, opacity;
+  }
+  .an-transition-opacity {
+    transition-property: opacity;
+  }
+  .border-block-gray-100 {
+    border-block: 1px solid #eaf4f5;
+  }
+  .border-innset-white {
+    border: 2px solid #fff;
+  }
+}

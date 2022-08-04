@@ -1,0 +1,24 @@
+{
+    "parser": "@babel/eslint-parser",
+    "extends": ["airbnb","prettier"],
+    "plugins": ["prettier"],
+    "globals": {
+        "document": "readonly"
+    },
+    "rules": {
+        "class-methods-use-this": "off",
+        "no-plusplus": "off",
+        "linebreak-style": 0,
+        "lines-between-class-members": [
+            "error",
+            "always",
+            { "exceptAfterSingleLine": true }
+          ],
+          "no-unused-expressions":"off",
+          "max-classes-per-file": "off",
+          "no-param-reassign":"off",
+          "no-use-before-define":"off",
+          "no-console":"off"
+
+    }
+}
